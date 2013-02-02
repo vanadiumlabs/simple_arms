@@ -1,0 +1,23 @@
+<launch>
+
+  <arg name="arm_dof" />
+  <arg name="root_name" />
+  <arg name="tip_name" />
+  <arg name="joint_trajectory_name" default="follow_joint_trajectory" />
+  <arg name="offset" default="0.0" />
+
+  <!-- fk/ik solver -->
+  <node pkg="arm_kinematics" type="arm_kinematics" name="arm_kinematics" output="screen">
+    <param name="root_name" value="$(arg root_name)" />
+    <param name="tip_name" value="$(arg tip_name)" />
+  </node>
+
+  <node name="simple_arm_server" pkg="simple_arm_server" type="simple_arm_server.py" output="screen" >
+    <param name="arm_dof" value="$(arg arm_dof)" />
+    <param name="root_name" value="$(arg root_name)" />
+    <param name="tip_name" value="$(arg tip_name)" />
+    <param name="offset" value="$(arg offset)" />
+    <remap from="follow_joint_trajectory" to="$(arg joint_trajectory_name)" />
+  </node>
+
+</launch>

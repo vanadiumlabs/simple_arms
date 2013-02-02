@@ -1,0 +1,29 @@
+<package>
+  <name>simple_arm_server</name>
+  <version>0.5.0</version>
+  <description>
+    An interface to MoveIt for 4 and 5-DOF arms.
+  </description>
+  <author>Michael Ferguson</author>
+  <maintainer email="mike@vanadiumlabs.com">Michael Ferguson</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/simple_arm_server</url>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <build_depend>actionlib</build_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>arm_navigation_msgs</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+  <run_depend>kinematics_msgs</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <run_depend>actionlib</run_depend>
+</package>
